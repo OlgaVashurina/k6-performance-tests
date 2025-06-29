@@ -99,6 +99,23 @@ These tests demonstrate k6 usage for functional and load testing in a controlled
 
 ---
 
+🖥️ Jenkins Integration
+✅ Configured to:
+- Pull repository from GitHub
+- Run Postman collection tests via Newman using `run-tests.bat`
+- Generate HTML reports automatically
+- Publish reports in Jenkins under the **HTML Report** tab
+
+🔗 **How it works:**
+On each build, Jenkins:
+1. Clones or pulls the repository
+2. Runs the Newman collection tests
+3. Generates `newman-report.html`
+4. Publishes the report for review
+
+💡 **Note:** Reports are stored locally in the project folder under `/newman` and displayed in Jenkins after each build.
+
+
 ### 🙋‍♀️ Author
 
 Olga Vashurina
