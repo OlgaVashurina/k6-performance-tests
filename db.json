@@ -1,0 +1,10 @@
+{
+  "users": [
+    { "id": 1, "name": "Olga", "role": "QA Engineer" },
+    { "id": 2, "name": "Ivan", "role": "Developer" }
+  ],
+  "posts": [
+    { "id": 1, "title": "Load Testing with k6", "author": "Olga" },
+    { "id": 2, "title": "API Testing with Postman", "author": "Ivan" }
+  ]
+}

@@ -2,7 +2,8 @@
 
 ## 📌 Description
 
-This repository contains examples of load testing using [k6](https://k6.io) for QA practice and portfolio.
+This repository contains examples of load testing using [k6](https://k6.io) for QA practice and portfolio.  
+Tests include GET, POST, PUT, and DELETE requests for both demo APIs and a local mock API.
 
 ---
 
@@ -14,22 +15,22 @@ This repository contains examples of load testing using [k6](https://k6.io) for 
 
 ### 📜 Script
 
-The [`test.js`](./test.js) file contains the test scenario.
+[`test_get.js`](./test_get.js) – GET request to https://test.k6.io.
 
 ### 📊 Results
 
-- Number of requests: 510
+- Total requests: 510
 - Average response time: ~57ms
 - Errors: ~6%
 
 ### 💡 **Conclusion**
 
-The test showed an average response time of ~57ms with 10 VUs and no significant errors.  
+The test showed an average response time of ~57ms with 10 VUs and 510 GET requests.  
 In real practice, load testing of public sites is performed **only with the owners' permission**.
 
 ---
 
-## ✅ Test 2: Creating users via POST
+## ✅ Test 2: POST users on JSONPlaceholder
 
 🔗 **URL:** https://jsonplaceholder.typicode.com/users  
 👥 **Virtual Users (VU):** 10  
@@ -37,27 +38,64 @@ In real practice, load testing of public sites is performed **only with the owne
 
 ### 📜 Script
 
-The [`test-post-users.js`](./test-post-users.js) file sends POST requests to create users with name, username, and email.
+[`test-post-users.js`](./test-post-users.js) – POST request to create users (mock response).
 
 ### 📊 Results
 
 - **Status:** 201 Created
-- **Average Response Time:** ~360ms
+- **Average response time:** ~360ms
 - **Errors:** 0%
 
 ### 💡 **Conclusion**
 
-The test successfully created 10 users (mock response) using POST requests.  
-JSONPlaceholder does not save data but returns a valid created object for testing purposes.
+Successfully created 10 users (mock) using POST requests.
+
+---
+
+## ✅ Test 3: Local Mock API (json-server)
+
+### 🔗 **Base URL:** http://localhost:3000
+
+#### 🗂 **Tested endpoints:**
+
+- `/users`
+- `/posts`
+
+---
+
+### 📜 Scripts
+
+| **Script** | **Description** |
+|------------|-----------------|
+| [`test-get-local.js`](./test-get-local.js) | GET all users |
+| [`test-post-local.js`](./test-post-local.js) | POST new user |
+| [`test-put-local.js`](./test-put-local.js) | PUT update user with id=1 |
+| [`test-delete-local.js`](./test-delete-local.js) | DELETE user with id=1 |
+
+---
+
+### 📊 **Results (local)**
+
+- GET: Status 200 OK
+- POST: Status 201 Created
+- PUT: Status 200 OK (full replacement of user data)
+- DELETE: Status 200 OK (user deleted)
+
+---
+
+### 💡 **Conclusion**
+
+Practiced CRUD requests on a local mock API created with json-server.  
+These tests demonstrate k6 usage for functional and load testing in a controlled local environment.
 
 ---
 
 ## 🛠 Plans
 
-- Add POST request examples with reqres.in
-- Add PUT and DELETE request tests
-- Test a local mock API (json-server)
-- Set up integration with Grafana Cloud
+- ✅ Add POST request examples with reqres.in
+- ✅ Add PUT and DELETE request tests
+- ✅ Test a local mock API (json-server)
+- ⬜ Set up integration with Grafana Cloud
 
 ---
 
