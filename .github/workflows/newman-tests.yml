@@ -1,0 +1,33 @@
+name: Run Postman tests with Newman
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+
+jobs:
+  newman-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+
+    - name: Install Newman
+      run: npm install -g newman
+
+    - name: Run Postman collection with Newman
+      run: |
+        newman run My_Capital_QA.postman_collection.json --reporters cli,html --reporter-html-export newman/newman-report.html
+
+    - name: Upload test report artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: newman-report
+        path: newman/newman-report.html
