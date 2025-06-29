@@ -12,24 +12,15 @@ This repository contains examples of load testing using [k6](https://k6.io) for 
 👥 **Virtual Users (VU):** 10  
 ⏱ **Duration:** 30 seconds
 
----
-
 ### 📜 Script
 
 The [`test.js`](./test.js) file contains the test scenario.
 
----
-
 ### 📊 Results
 
-The [`results.json`](./results.json) file contains full metrics:
-
-- Number of requests
-- Response time (latency)
-- Number of errors (http_req_failed)
-- RPS (requests per second)
-
----
+- Number of requests: 510
+- Average response time: ~57ms
+- Errors: ~6%
 
 ### 💡 **Conclusion**
 
@@ -38,10 +29,34 @@ In real practice, load testing of public sites is performed **only with the owne
 
 ---
 
+## ✅ Test 2: Creating users via POST
+
+🔗 **URL:** https://jsonplaceholder.typicode.com/users  
+👥 **Virtual Users (VU):** 10  
+🔄 **Iterations:** 10
+
+### 📜 Script
+
+The [`test-post-users.js`](./test-post-users.js) file sends POST requests to create users with name, username, and email.
+
+### 📊 Results
+
+- **Status:** 201 Created
+- **Average Response Time:** ~360ms
+- **Errors:** 0%
+
+### 💡 **Conclusion**
+
+The test successfully created 10 users (mock response) using POST requests.  
+JSONPlaceholder does not save data but returns a valid created object for testing purposes.
+
+---
+
 ## 🛠 Plans
 
-- Add POST request examples
-- Test a local mock API
+- Add POST request examples with reqres.in
+- Add PUT and DELETE request tests
+- Test a local mock API (json-server)
 - Set up integration with Grafana Cloud
 
 ---
