@@ -11309,6 +11309,31 @@
       "id": "6d6d",
       "name": "Anna",
       "role": "Developer"
+    },
+    {
+      "id": "1639",
+      "name": "Olga",
+      "role": "Product Owner"
+    },
+    {
+      "id": "bef9",
+      "name": "Ivan",
+      "role": "Marketing Manager"
+    },
+    {
+      "id": "b7c2",
+      "name": "Anna",
+      "role": "DevOps Engineer"
+    },
+    {
+      "id": "0f3d",
+      "name": "Dmitry",
+      "role": "Business Analyst"
+    },
+    {
+      "id": "7ec4",
+      "name": "Dmitry",
+      "role": "DevOps Engineer"
     }
   ],
   "posts": [
