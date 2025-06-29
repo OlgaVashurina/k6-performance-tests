@@ -106,6 +106,8 @@ These tests demonstrate k6 usage for functional and load testing in a controlled
 - Generate HTML reports automatically
 - Publish reports in Jenkins under the **HTML Report** tab
 
+---
+
 🔗 **How it works:**
 On each build, Jenkins:
 1. Clones or pulls the repository
@@ -114,6 +116,8 @@ On each build, Jenkins:
 4. Publishes the report for review
 
 💡 **Note:** Reports are stored locally in the project folder under `/newman` and displayed in Jenkins after each build.
+
+---
 
 ### 🙋‍♀️ Author
 
