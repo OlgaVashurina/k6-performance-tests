@@ -115,7 +115,6 @@ On each build, Jenkins:
 
 💡 **Note:** Reports are stored locally in the project folder under `/newman` and displayed in Jenkins after each build.
 
-
 ### 🙋‍♀️ Author
 
 Olga Vashurina
