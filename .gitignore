@@ -1,0 +1,12 @@
+# Ignore results output
+results/results.json
+
+# Ignore node modules if you install any
+node_modules/
+
+# Ignore local environment files
+.env
+
+# Ignore OS files
+.DS_Store
+Thumbs.db
