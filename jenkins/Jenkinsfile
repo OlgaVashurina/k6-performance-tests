@@ -1,19 +1,25 @@
 pipeline {
     agent any
+
     stages {
-        stage('Run Newman tests') {
+        stage('Run Newman tests and generate Allure report') {
             steps {
                 bat 'scripts\\run-tests.bat'
             }
         }
+
+        stage('Run k6 performance test on server') {
+            steps {
+                bat 'k6 run k6_tests\\test-post-server.js'
+            }
+        }
+
         stage('Publish Allure report to GitHub Pages') {
             steps {
                 bat '''
-                cd ..
-                xcopy k6-performance-tests\\allure-report\\* qa-allure-reports /E /H /C /I /Y
-                cd qa-allure-reports
+                cd ..\\qa-allure-reports
                 git add .
-                git commit -m "Update report %date% %time%"
+                git commit -m "Update Allure report"
                 git push origin main
                 '''
             }

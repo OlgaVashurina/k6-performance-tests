@@ -1,12 +1,13 @@
 @echo off
-echo 🔷 Запуск Newman тестов и генерация Allure отчёта...
+echo Running Newman tests...
 
-:: Создаём папку для Allure результатов
-mkdir newman_reports
+newman run postman\My_Capital_QA.postman_collection.json -r cli,allure --reporter-allure-export allure-results
 
-:: Запускаем тесты и формируем отчёты
-newman run postman\My_Capital_QA.postman_collection.json -r cli,allure --reporter-allure-export newman_reports\allure-results
+echo Generating Allure report...
+allure generate allure-results -o allure-report --clean
 
-echo ✅ Тесты завершены. Результаты сохранены в newman_reports\allure-results
+echo Copying report to qa-allure-reports repo...
+xcopy allure-report\* ..\qa-allure-reports /E /H /C /I /Y
 
+echo All done!
 pause
