@@ -1,45 +1,22 @@
 pipeline {
     agent any
-
     stages {
-        stage('Checkout') {
+        stage('Run Newman tests') {
             steps {
-                git 'https://github.com/OlgaVashurina/k6-performance-tests.git'
+                bat 'scripts\\run-tests.bat'
             }
         }
-
-        stage('Install k6') {
+        stage('Publish Allure report to GitHub Pages') {
             steps {
-                sh 'which k6 || sudo apt install -y k6'
+                bat '''
+                cd ..
+                xcopy k6-performance-tests\\allure-report\\* qa-allure-reports /E /H /C /I /Y
+                cd qa-allure-reports
+                git add .
+                git commit -m "Update report %date% %time%"
+                git push origin main
+                '''
             }
-        }
-
-        stage('Run Local Tests') {
-            steps {
-                sh 'k6 run k6_tests/local/test-get-local.js'
-                sh 'k6 run k6_tests/local/test-post-local.js'
-                sh 'k6 run k6_tests/local/test-put-local.js'
-                sh 'k6 run k6_tests/local/test-delete-local.js'
-            }
-        }
-
-        stage('Run Server Tests') {
-            steps {
-                sh 'k6 run k6_tests/server/test_get.js'
-                sh 'k6 run k6_tests/server/test-post-users.js'
-            }
-        }
-
-        stage('Archive results') {
-            steps {
-                archiveArtifacts artifacts: 'results/*', allowEmptyArchive: true
-            }
-        }
-    }
-
-    post {
-        always {
-            echo 'Pipeline finished.'
         }
     }
 }
