@@ -1,22 +1,13 @@
-# Allure artefacts
 allure-results/
 allure-report/
-
-# Newman reports
 newman-report.html
 newman-run-report-*.html
-
-# node / package managers
+newman_reports/
+results/
 node_modules/
 package-lock.json
-
-# System files
 .DS_Store
 Thumbs.db
-
-# IDE configs
 .idea/
 .vscode/
-
-# Env files
 .env
