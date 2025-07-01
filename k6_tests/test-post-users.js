@@ -24,3 +24,9 @@ export default function () {
   console.log('Server Status:', res.status);
   sleep(1);
 }
+
+export function handleSummary(data) {
+    return {
+        "k6_tests/k6-report.json": JSON.stringify(data),
+    };
+}
