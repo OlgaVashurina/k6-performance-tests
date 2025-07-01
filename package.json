@@ -1,0 +1,24 @@
+{
+  "name": "k6-performance-tests",
+  "version": "1.0.0",
+  "description": "This repository contains examples of load testing using [k6](https://k6.io) for QA practice and portfolio.  \r Tests include GET, POST, PUT, and DELETE requests for both demo APIs and a local mock API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/OlgaVashurina/k6-performance-tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/OlgaVashurina/k6-performance-tests/issues"
+  },
+  "homepage": "https://github.com/OlgaVashurina/k6-performance-tests#readme",
+  "devDependencies": {
+    "k6-html-reporter": "^1.0.5"
+  }
+}
