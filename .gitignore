@@ -1,12 +1,21 @@
-# Ignore results output
-results/results.json
+# Allure artefacts
+allure-results/
+allure-report/
 
-# Ignore node modules if you install any
+# Newman HTML reports
+newman/
+*.html
+
+# node / package managers
 node_modules/
 
-# Ignore local environment files
-.env
-
-# Ignore OS files
+# System files
 .DS_Store
 Thumbs.db
+
+# IDE configs
+.idea/
+.vscode/
+
+# Env files
+.env

@@ -1,0 +1,40 @@
+name: Generate and Deploy Allure Report
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Setup Java
+      uses: actions/setup-java@v3
+      with:
+        distribution: 'temurin'
+        java-version: '11'
+
+    - name: Install Allure Commandline
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y curl unzip
+        curl -o allure.zip -L https://github.com/allure-framework/allure2/releases/download/2.21.0/allure-2.21.0.zip
+        unzip allure.zip -d $HOME/allure
+        echo "$HOME/allure/bin" >> $GITHUB_PATH
+
+    - name: Generate Allure Report
+      run: |
+        allure generate allure-results -o allure-report --clean
+
+    - name: Deploy to qa-allure-reports repo
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.PERSONAL_TOKEN }}
+        publish_dir: ./allure-report
+        publish_branch: main
+        publish_repo: OlgaVashurina/qa-allure-reports
