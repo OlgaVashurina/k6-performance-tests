@@ -11379,6 +11379,26 @@
       "id": "5edc",
       "name": "Dmitry",
       "role": "Product Owner"
+    },
+    {
+      "id": "6e29",
+      "name": "Svetlana",
+      "role": "Marketing Manager"
+    },
+    {
+      "id": "4947",
+      "name": "Anna",
+      "role": "QA Engineer"
+    },
+    {
+      "id": "b8ea",
+      "name": "Petr",
+      "role": "Marketing Manager"
+    },
+    {
+      "id": "a61e",
+      "name": "Petr",
+      "role": "Product Owner"
     }
   ],
   "posts": [

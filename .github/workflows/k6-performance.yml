@@ -1,0 +1,37 @@
+name: Deploy Allure Report
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout main repo
+        uses: actions/checkout@v3
+
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '11'
+
+      - name: Install Allure
+        run: |
+          sudo apt update
+          sudo apt install -y allure
+
+      - name: Generate Allure report
+        run: |
+          allure generate allure-results -o allure-report --clean
+
+      - name: Deploy to qa-allure-reports repo
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./allure-report
+          publish_branch: main
+          publish_repo: OlgaVashurina/qa-allure-reports

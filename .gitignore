@@ -11,3 +11,5 @@ Thumbs.db
 .idea/
 .vscode/
 .env
+k6_tests/k6-report.json
+k6_tests/k6-report.html
