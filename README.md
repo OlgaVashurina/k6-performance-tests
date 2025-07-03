@@ -17,14 +17,15 @@ This repository contains automated performance and API tests with **k6** and **P
 
 ## 📁 Project Structure
 
-k6-performance-tests/
-├── k6_tests/ # k6 performance test scripts
-├── postman/ # Postman collections
-├── scripts/ # Shell/Bash scripts for Jenkins jobs
-├── allure-report/ # Generated Allure reports
-├── .github/workflows/ # GitHub Actions workflows
-├── package.json
-└── README.md
+k6-performance-tests:
+  k6_tests: # k6 performance test scripts
+  postman: # Postman collections
+  scripts: # Shell/Bash scripts for Jenkins jobs
+  allure-report: # Generated Allure reports
+  .github:
+    workflows: # GitHub Actions workflows
+  package.json: # Project dependencies and scripts
+  README.md: # Project documentation
 
 ---
 
@@ -36,8 +37,6 @@ k6-performance-tests/
   `k6 run k6_tests/test-post-users.js`
 - **Generates:** `k6-report.html` with detailed performance metrics.
 
----
-
 ### 🔹 2. API Testing (Postman + Newman)
 - **Collection:** `postman/My_Capital_QA.postman_collection.json`
 - **Run locally & generate Allure report:**
@@ -46,21 +45,21 @@ k6-performance-tests/
     --reporters cli,allure \
     --reporter-allure-export allure-results
 
-🔹 3. CI/CD Integration
+### 🔹 3. CI/CD Integration
 Jenkins Pipelines: run tests and publish reports automatically.
 GitHub Actions: auto-deployment setup in .github/workflows/.
 Outcome: fully automated testing and reporting pipeline.
 
-🔹 4. Allure Reports
+### 🔹 4. Allure Reports
 Integrated with: Newman collections and potentially k6 (via converters).
 Generates: beautiful HTML Allure reports for both API and performance tests.
 
 ---
 
 🎯 Tech Stack
-Languages: JavaScript, Bash
-Tools: k6, Postman, Newman, Allure
-CI/CD: Jenkins, GitHub Actions
+- Languages: JavaScript, Bash
+- Tools: k6, Postman, Newman, Allure
+- CI/CD: Jenkins, GitHub Actions
 
 ---
 
