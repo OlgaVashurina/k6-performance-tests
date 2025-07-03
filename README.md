@@ -2,23 +2,23 @@
 
 Welcome to my QA portfolio repository. Here you will find:
 
-- ✅ **Load Testing** with [k6](https://k6.io)
-- ✅ **API Testing** with [Postman](https://www.postman.com/) + [Newman](https://www.npmjs.com/package/newman)
-- ✅ **CI/CD Integration** using **GitHub Actions** and **Jenkins**
-- ✅ **Allure HTML Reports** generation
+✅ **Load Testing** with [k6](https://k6.io)
+✅ **API Testing** with [Postman](https://www.postman.com/) + [Newman](https://www.npmjs.com/package/newman)
+✅ **CI/CD Integration** using **GitHub Actions** and **Jenkins**
+✅ **Allure HTML Reports** generation
 
 ---
 
 ## 📂 **Project Structure**
 
 📁 k6-performance-tests
-├── k6_tests/ # k6 performance scripts
-├── postman/ # Postman collections
-├── scripts/ # Bash scripts for Jenkins
-├── allure-report/ # Generated Allure reports
-├── .github/workflows/ # GitHub Actions workflows
-├── package.json
-└── README.md
+├- k6_tests/ # k6 performance scripts
+├- postman/ # Postman collections
+├- scripts/ # Bash scripts for Jenkins
+├- allure-report/ # Generated Allure reports
+├- .github/workflows/ # GitHub Actions workflows
+├- package.json
+└- README.md
 
 ---
 
