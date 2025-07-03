@@ -1,56 +1,66 @@
 # 🚀 k6 Performance & API Testing Portfolio
 
-Welcome to my QA portfolio repository. Here you will find:
-
-✅ **Load Testing** with [k6](https://k6.io)
-✅ **API Testing** with [Postman](https://www.postman.com/) + [Newman](https://www.npmjs.com/package/newman)
-✅ **CI/CD Integration** using **GitHub Actions** and **Jenkins**
-✅ **Allure HTML Reports** generation
+## ✨ Summary
+This repository contains automated performance and API tests with **k6** and **Postman + Newman**, integrated with **Allure reporting** and **CI/CD pipelines (Jenkins & GitHub Actions)**.
 
 ---
 
-## 📂 **Project Structure**
+## ✅ Main Features
 
-📁 k6-performance-tests
-├- k6_tests/ # k6 performance scripts
-├- postman/ # Postman collections
-├- scripts/ # Bash scripts for Jenkins
-├- allure-report/ # Generated Allure reports
-├- .github/workflows/ # GitHub Actions workflows
-├- package.json
-└- README.md
+|  ✅  | **Load Testing with k6**                          |
+|-------|--------------------------------------------------|
+|  ✅  | **API Testing with Postman + Newman**             |
+|  ✅  | **CI/CD integration (GitHub Actions & Jenkins)**  |
+|  ✅  | **Allure HTML Reports for results visualization** |
 
 ---
 
-## ⚡ **Implemented Features**
+## 📁 Project Structure
 
-🔹 1. Load Testing (k6)
-- Scripts: located in `k6_tests/`
-- Run locally:  
+k6-performance-tests/
+├── k6_tests/ # k6 performance test scripts
+├── postman/ # Postman collections
+├── scripts/ # Shell/Bash scripts for Jenkins jobs
+├── allure-report/ # Generated Allure reports
+├── .github/workflows/ # GitHub Actions workflows
+├── package.json
+└── README.md
+
+---
+
+## ⚡ Implemented Features
+
+### 🔹 1. Load Testing (k6)
+- **Scripts:** `k6_tests/`
+- **Run locally:**  
   `k6 run k6_tests/test-post-users.js`
-- Generates: `k6-report.html` with detailed performance metrics.
+- **Generates:** `k6-report.html` with detailed performance metrics.
 
-🔹 2. API Testing (Postman + Newman)
-- Collection: `postman/My_Capital_QA.postman_collection.json`
-- Run with Newman & generate Allure report:
+---
+
+### 🔹 2. API Testing (Postman + Newman)
+- **Collection:** `postman/My_Capital_QA.postman_collection.json`
+- **Run locally & generate Allure report:**
   ```bash
   newman run postman/My_Capital_QA.postman_collection.json \
-  --reporters cli,allure \
-  --reporter-allure-export allure-results
+    --reporters cli,allure \
+    --reporter-allure-export allure-results
 
-🔹 3. CI/CD
-Jenkins Pipelines: run tests and publish reports automatically
-GitHub Actions: auto-deployment setup in .github/workflows/
+🔹 3. CI/CD Integration
+Jenkins Pipelines: run tests and publish reports automatically.
+GitHub Actions: auto-deployment setup in .github/workflows/.
+Outcome: fully automated testing and reporting pipeline.
 
 🔹 4. Allure Reports
-Beautiful HTML reports generated for both API and performance tests.
+Integrated with: Newman collections and potentially k6 (via converters).
+Generates: beautiful HTML Allure reports for both API and performance tests.
 
 ---
 
 🎯 Tech Stack
-✅ Languages: JavaScript, Bash
-✅ Tools: k6, Postman, Newman, Allure
-✅ CI/CD: Jenkins, GitHub Actions
+Languages: JavaScript, Bash
+Tools: k6, Postman, Newman, Allure
+CI/CD: Jenkins, GitHub Actions
 
 ---
 
