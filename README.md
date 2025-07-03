@@ -17,15 +17,14 @@ This repository contains automated performance and API tests with **k6** and **P
 
 ## 📁 Project Structure
 
-k6-performance-tests:
-  k6_tests: # k6 performance test scripts
-  postman: # Postman collections
-  scripts: # Shell/Bash scripts for Jenkins jobs
-  allure-report: # Generated Allure reports
-  .github:
-    workflows: # GitHub Actions workflows
-  package.json: # Project dependencies and scripts
-  README.md: # Project documentation
+  - k6_tests: # k6 performance test scripts
+  - postman: # Postman collections
+  - scripts: # Shell/Bash scripts for Jenkins jobs
+  - allure-report: # Generated Allure reports
+  - .github:
+  - workflows: # GitHub Actions workflows
+  - package.json: # Project dependencies and scripts
+  - README.md: # Project documentation
 
 ---
 
