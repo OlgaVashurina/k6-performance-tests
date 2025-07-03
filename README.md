@@ -1,124 +1,69 @@
-# k6 Performance Testing Examples
+🚀 k6 + Postman + Jenkins Performance & API Testing
+📌 Overview
+This repository includes:
 
-## 📌 Description
+✅ Load testing examples using k6
+✅ Postman API test examples executed via Newman
+✅ Jenkins integration for CI test runs and report generation
+✅ Automated publishing of reports to a separate qa-allure-reports repository for portfolio demonstrations
 
-This repository contains examples of load testing using [k6](https://k6.io) for QA practice and portfolio.  
-Tests include GET, POST, PUT, and DELETE requests for both demo APIs and a local mock API.
+⚙️ What has been implemented
+🔥 1. Load testing with k6
+Testing public APIs (jsonplaceholder.typicode.com)
 
----
+Testing a local Mock API (json-server)
 
-## ✅ Test 1: Demo site load test
+Generating k6 HTML reports (k6-report.html)
 
-🔗 **URL:** https://test.k6.io  
-👥 **Virtual Users (VU):** 10  
-⏱ **Duration:** 30 seconds
+💻 2. API testing with Postman via Newman
+Postman collection (My_Capital_QA.postman_collection.json)
 
-### 📜 Script
+Generating Allure reports based on Postman test results
 
-[`test_get.js`](./test_get.js) – GET request to https://test.k6.io.
+Reports are saved in the allure-report folder
 
-### 📊 Results
+🖥️ 3. Jenkins integration
+Two Jenkins jobs:
 
-- Total requests: 510
-- Average response time: ~57ms
-- Errors: ~6%
+✅ Run Newman API tests: executes the Postman collection and generates an Allure report
 
-### 💡 **Conclusion**
+✅ Run k6 performance tests: runs k6 scripts and generates an HTML report
 
-The test showed an average response time of ~57ms with 10 VUs and 510 GET requests.  
-In real practice, load testing of public sites is performed **only with the owners' permission**.
+Uses batch scripts:
 
----
+scripts/run-tests.bat — for Postman + Allure
 
-## ✅ Test 2: POST users on JSONPlaceholder
+scripts/run-k6-tests.bat — for k6
 
-🔗 **URL:** https://jsonplaceholder.typicode.com/users  
-👥 **Virtual Users (VU):** 10  
-🔄 **Iterations:** 10
+🌐 4. GitHub Actions
+Workflow to generate and deploy reports to a separate repository qa-allure-reports
+This allows viewing reports via GitHub Pages and sharing a link without running Jenkins locally.
 
-### 📜 Script
+✅ Final result
+🔗 Postman + Allure Reports
+All Postman collection tests are executed in Jenkins and generate an Allure report for reviewing results.
 
-[`test-post-users.js`](./test-post-users.js) – POST request to create users (mock response).
+🔗 k6 Performance Reports
+k6 load tests create a k6-report.html, which is copied to qa-allure-reports for publishing.
 
-### 📊 Results
+🔗 GitHub Pages demo
+A separate repository with GitHub Pages is configured to publicly display reports for recruiters.
 
-- **Status:** 201 Created
-- **Average response time:** ~360ms
-- **Errors:** 0%
+🔗 Full workflow summary
+You push changes to GitHub.
 
-### 💡 **Conclusion**
+Jenkins automatically pulls the changes.
 
-Successfully created 10 users (mock) using POST requests.
+The following are executed:
 
----
+Postman tests → Allure report
 
-## ✅ Test 3: Local Mock API (json-server)
+k6 tests → k6 HTML report
 
-### 🔗 **Base URL:** http://localhost:3000
+Scripts copy the reports to the second repository, qa-allure-reports.
 
-#### 🗂 **Tested endpoints:**
+GitHub Pages publishes the final reports for easy sharing.
 
-- `/users`
-- `/posts`
-
----
-
-### 📜 Scripts
-
-| **Script** | **Description** |
-|------------|-----------------|
-| [`test-get-local.js`](./test-get-local.js) | GET all users |
-| [`test-post-local.js`](./test-post-local.js) | POST new user |
-| [`test-put-local.js`](./test-put-local.js) | PUT update user with id=1 |
-| [`test-delete-local.js`](./test-delete-local.js) | DELETE user with id=1 |
-
----
-
-### 📊 **Results (local)**
-
-- GET: Status 200 OK
-- POST: Status 201 Created
-- PUT: Status 200 OK (full replacement of user data)
-- DELETE: Status 200 OK (user deleted)
-
----
-
-### 💡 **Conclusion**
-
-Practiced CRUD requests on a local mock API created with json-server.  
-These tests demonstrate k6 usage for functional and load testing in a controlled local environment.
-
----
-
-## 🛠 Plans
-
-- ✅ Add POST request examples with reqres.in
-- ✅ Add PUT and DELETE request tests
-- ✅ Test a local mock API (json-server)
-- ⬜ Set up integration with Grafana Cloud
-
----
-
-🖥️ Jenkins Integration
-✅ Configured to:
-- Pull repository from GitHub
-- Run Postman collection tests via Newman using `run-tests.bat`
-- Generate HTML reports automatically
-- Publish reports in Jenkins under the **HTML Report** tab
-
----
-
-🔗 **How it works:**
-On each build, Jenkins:
-1. Clones or pulls the repository
-2. Runs the Newman collection tests
-3. Generates `newman-report.html`
-4. Publishes the report for review
-
-💡 **Note:** Reports are stored locally in the project folder under `/newman` and displayed in Jenkins after each build.
-
----
-
-### 🙋‍♀️ Author
-
+🙋‍♀️ Author
 Olga Vashurina
+QA Engineer | Performance Testing | Automation in Progress
