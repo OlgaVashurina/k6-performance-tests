@@ -11419,6 +11419,11 @@
       "id": "0435",
       "name": "Anna",
       "role": "Marketing Manager"
+    },
+    {
+      "id": "7345",
+      "name": "Dmitry",
+      "role": "Product Owner"
     }
   ],
   "posts": [
