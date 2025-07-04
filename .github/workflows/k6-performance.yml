@@ -20,7 +20,7 @@ jobs:
           java-version: '11'
 
        - name: Install Allure Commandline
-        run: |
+         run: |
           curl -o allure.zip -L https://github.com/allure-framework/allure2/releases/download/2.21.0/allure-2.21.0.zip
           unzip allure.zip -d $HOME/allure
       
