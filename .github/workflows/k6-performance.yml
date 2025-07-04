@@ -38,3 +38,5 @@ jobs:
           github_token: ${{ secrets.PERSONAL_TOKEN }}
           publish_dir: ./allure-report
           publish_branch: gh-pages
+          user_name: OlgaVashurina
+          user_email: OlgaVashurina@users.noreply.github.com
