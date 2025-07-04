@@ -22,8 +22,8 @@ jobs:
       - name: Install Allure Commandline
         run: |
           curl -o allure.zip -L https://github.com/allure-framework/allure2/releases/download/2.21.0/allure-2.21.0.zip
-          unzip allure.zip -d $HOME/allure
-          echo "$HOME/allure/bin" >> $GITHUB_PATH
+         unzip allure.zip -d $HOME/allure
+         export PATH="$HOME/allure/bin:$PATH"
 
       - name: Generate Allure report
         run: |
