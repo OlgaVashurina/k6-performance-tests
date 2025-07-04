@@ -13,19 +13,20 @@ jobs:
       - name: Checkout main repo
         uses: actions/checkout@v3
 
-      - name: Setup Java
-        uses: actions/setup-java@v3
-        with:
-          distribution: 'temurin'
-          java-version: '11'
+      - name: Install dependencies (Java, curl, unzip)
+        run: |
+          sudo apt update
+          sudo apt install -y openjdk-11-jdk curl unzip
 
       - name: Install Allure Commandline
         run: |
           curl -o allure.zip -L https://github.com/allure-framework/allure2/releases/download/2.21.0/allure-2.21.0.zip
           unzip allure.zip -d $HOME/allure
-      
-      - name: Add Allure to PATH
-        run: echo "$HOME/allure/bin" >> $GITHUB_PATH
+          echo "$HOME/allure/allure-2.21.0/bin" >> $GITHUB_PATH
+
+      - name: Verify Allure installation
+        run: |
+          allure --version
 
       - name: Generate Allure report
         run: |
