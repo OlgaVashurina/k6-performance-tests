@@ -6,7 +6,7 @@ This repository contains automated performance and API tests with **k6** and **P
 ---
 
 ## ✅ Main Features
-
+|------|---------------------------------------------------|
 |  ✅  | **Load Testing with k6**                          |
 |  ✅  | **API Testing with Postman + Newman**             |
 |  ✅  | **CI/CD integration (GitHub Actions & Jenkins)**  |
