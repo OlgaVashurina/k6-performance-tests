@@ -53,7 +53,6 @@ This repository contains automated performance and API tests with **k6** and **P
 ### 🔹 4. Allure Reports
 - Integrated with: Newman collections and potentially k6 (via converters).
 - Generates: beautiful HTML Allure reports for both API and performance tests.
-- **View latest report:** [allure-report/index.html](allure-report/index.html)
 
 ---
 
