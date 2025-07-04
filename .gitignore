@@ -1,5 +1,3 @@
-allure-results/
-allure-report/
 newman-report.html
 newman-run-report-*.html
 newman_reports/
