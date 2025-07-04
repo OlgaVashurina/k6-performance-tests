@@ -1,7 +1,7 @@
 allure-report/*
 !allure-report/index.html
-!allure-report/history/
 !allure-report/widgets/
+!allure-report/widgets/**
 newman-report.html
 newman-run-report-*.html
 newman_reports/
