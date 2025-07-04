@@ -8,7 +8,6 @@ This repository contains automated performance and API tests with **k6** and **P
 ## ✅ Main Features
 
 |  ✅  | **Load Testing with k6**                          |
-|-------|--------------------------------------------------|
 |  ✅  | **API Testing with Postman + Newman**             |
 |  ✅  | **CI/CD integration (GitHub Actions & Jenkins)**  |
 |  ✅  | **Allure HTML Reports for results visualization** |
@@ -17,14 +16,15 @@ This repository contains automated performance and API tests with **k6** and **P
 
 ## 📁 Project Structure
 
-  - k6_tests: # k6 performance test scripts
-  - postman: # Postman collections
-  - scripts: # Shell/Bash scripts for Jenkins jobs
-  - allure-report: # Generated Allure reports
-  - .github:
-  - workflows: # GitHub Actions workflows
-  - package.json: # Project dependencies and scripts
-  - README.md: # Project documentation
+| Folder / File | Description |
+| ------------- | ----------- |
+| [k6_tests/](./k6_tests) | ⚡ k6 performance test scripts |
+| [postman/](./postman) | 📬 Postman API collections |
+| [scripts/](./scripts) | 🔧 Shell/Batch scripts for Jenkins jobs |
+| [allure-report/](./allure-report) | 📊 Generated Allure reports |
+| [.github/workflows/](./.github/workflows) | ⚙️ GitHub Actions workflows |
+| [package.json](./package.json) | 📦 Project dependencies and scripts |
+| [README.md](./README.md) | 📝 Project documentation |
 
 ---
 
@@ -45,13 +45,13 @@ This repository contains automated performance and API tests with **k6** and **P
     --reporter-allure-export allure-results
 
 ### 🔹 3. CI/CD Integration
-Jenkins Pipelines: run tests and publish reports automatically.
-GitHub Actions: auto-deployment setup in .github/workflows/.
-Outcome: fully automated testing and reporting pipeline.
+- Jenkins Pipelines: run tests and publish reports automatically.
+- GitHub Actions: auto-deployment setup in .github/workflows/.
+- Outcome: fully automated testing and reporting pipeline.
 
 ### 🔹 4. Allure Reports
-Integrated with: Newman collections and potentially k6 (via converters).
-Generates: beautiful HTML Allure reports for both API and performance tests.
+- Integrated with: Newman collections and potentially k6 (via converters).
+- Generates: beautiful HTML Allure reports for both API and performance tests.
 
 ---
 
